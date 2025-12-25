@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-// Alıstırma 2.1
-// Özyinelemeli Fonksiyon
+//Alıstırma 2.1
+//Özyinelemeli Fonksiyon
 int ucgenSayisi(int n) {
-    // n=1 ise 1 döndür
+    
     if (n == 1) {
         return 1;
     }
-    // Özyineleme Adımı: n + (n-1)'in üçgen sayısı
+    //Özyineleme Adımı = n + (n-1)'in üçgen sayısı
     return n + ucgenSayisi(n - 1);
 }
 
@@ -27,4 +27,5 @@ int main() {
     printf("\n");
 
     return 0;
+
 }
