@@ -13,29 +13,30 @@ int main() {
         "Temmuz", "Agustos", "Eylul", "Ekim", "Kasim", "Aralik"
     };
     
-    // Rastgele sayı üreticiyi başlat
+    // Rastgele sayı atamak için gerekli kod
     srand(time(NULL));
 
-    // 1. ADIM: Veriyi Üret (Tek sefer üretilir, iki fonksiyona da aynısı gönderilir)
+    //Veriyi Üreten kod sadece bir sefer üretir ve iki fonksiyona da aynı veriyi gönderir
     for (int i = 0; i < 12; i++) {
         aylik_cirolar[i] = rand() % 10 + 1;
     }
-    // Alıştırma 1.1
+    //Alıştırma 1.1
     printf("--- AYLIK CIROLAR --- \n");
-    
+
+    //Aylık ciroları ekrana yazdırma
     for(int i = 0; i < 12; i++){
         printf("%-10s: %dK\n", ay_isimleri[i], aylik_cirolar[i]);
     }
     
     printf("\n");
 
-    // 2. ADIM: Yatay Grafiği Çağır
+    //Yatay grafiği çizme
     yatay_grafik_ciz(aylik_cirolar, 12);
 
     printf("\n\n");
 
 
-    // 3. ADIM: Dikey (Sütun) Grafiği Çağır
+    //Dikey grafiğini çizme
     dikey_grafik_ciz(aylik_cirolar, 12);
     
     return 0;
@@ -53,18 +54,18 @@ void yatay_grafik_ciz(int ciro[], int ay_sayisi){
         "Temmuz", "Agustos", "Eylul", "Ekim", "Kasim", "Aralik"
     };
 
-    // Maksimumu bul
+    //Maksimumu bulma
     for (int i = 0; i < ay_sayisi; i++) {
         if (ciro[i] > max_deger) max_deger = ciro[i];
     }
     
-    // Alıştırma 1.2
+    //Alıştırma 1.2
     printf("--- YATAY CIRO GRAFIGI ---\n");
     
     for (int i = 0; i < ay_sayisi; i++) {
-        printf("%-10s: ", ay_isimleri[i]); // Ay ismini sola dayalı yaz
+        printf("%-10s: ", ay_isimleri[i]); //Ay ismini sola dayalı yaz
 
-        // Yıldız sayısını hesapla ve bas
+        //Yıldız sayısını hesapla ve ekrana yazdır
         int yildiz = (int)(((float)ciro[i] / max_deger) * MAX_UZUNLUK);
         for (int j = 0; j < yildiz; j++) {
             printf(" * ");
@@ -73,12 +74,12 @@ void yatay_grafik_ciz(int ciro[], int ay_sayisi){
     }
     }
 
-// --- DİKEY (SÜTUN) GRAFİK FONKSİYONU ---
+// --- SÜTUN GRAFİĞİ FONKSİYONU ---
 void dikey_grafik_ciz(int ciro[], int ay_sayisi) {
     int max_deger = 0;
     int MAX_YUKSEKLIK = 15;
     
-    // Alt kısma sığması için kısa isimler
+    //Alt kısma sığması için kısa isimler yazdırdık
     char *kisa_isimler[] = {
         "Oca", "Sub", "Mar", "Nis", "May", "Haz",
         "Tem", "Agu", "Eyl", "Eki", "Kas", "Ara"
@@ -89,13 +90,13 @@ void dikey_grafik_ciz(int ciro[], int ay_sayisi) {
         if (ciro[i] > max_deger) max_deger = ciro[i];
     }
 
-    // Her ayın yıldız yüksekliğini hesaplayıp diziye atalım
+    //Her ayın yıldız yüksekliğini hesaplayıp diziye atma
     int yildiz_yukseklikleri[12];
     for (int i = 0; i < ay_sayisi; i++) {
         yildiz_yukseklikleri[i] = (int)(((float)ciro[i] / max_deger) * MAX_YUKSEKLIK);
     }
 
-    // Alıştırma 1.3
+    //Alıştırma 1.3
     printf("--- DIKEY CIRO GRAFIGI ---\n\n");
     
     for (int i = MAX_YUKSEKLIK; i > 0; i--) {
@@ -115,10 +116,11 @@ void dikey_grafik_ciz(int ciro[], int ay_sayisi) {
     for(int i=0; i<ay_sayisi; i++) printf("--- ");
     printf("\n");
 
-    // Ay İsimleri
+    //Ay İsimlerini ekrana yazma
     printf("   ");
     for (int i = 0; i < ay_sayisi; i++) {
         printf("%s ", kisa_isimler[i]);
     }
     printf("\n");
+
 }
