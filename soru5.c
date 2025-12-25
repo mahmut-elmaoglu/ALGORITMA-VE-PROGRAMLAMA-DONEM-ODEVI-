@@ -26,7 +26,7 @@ int yolBul(int labirent[N][N], int cozum[N][N], int x, int y) {
 }
 
 int main() {
-    // 1: yol, 0: duvar
+    // 1 = yol, 0 = duvar
     int labirent[N][N] = {
         {1, 0, 1, 1, 1},
         {1, 0, 1, 0, 1},
@@ -69,5 +69,12 @@ int main() {
         printf("Cikis yolu bulunamadi.\n");
     }
 
+    /*
+        labirenti kendimiz oluşturduğumuz için her zaman çıkış yolu bulunucak ve aynı olucak
+    eğer random labbirent oluşturan bir kod yazsaydık o zaman hatalı bir labirentte 
+        ekrana cıkış yolu bulunamadı yazısını yazdırabilirdik
+    */
+
     return 0;
+
 }
