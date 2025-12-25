@@ -4,9 +4,9 @@
 int asalmi(int sayi) {
     if (sayi < 2) return 0; // 2'den küçük sayılar asal değildir
     for (int i = 2; i * i <= sayi; i++) {
-        if (sayi % i == 0) return 0; // Bölünebiliyorsa asal değildir
+        if (sayi % i == 0) return 0; //Eğer sayı i değerine bölünebiliyorsa asal değildir
     }
-    return 1; // Asaldır
+    return 1; //Asaldır
 }
 
 // Bir karakterin ünlü harf olup olmadığını kontrol eden fonksiyon
@@ -28,7 +28,7 @@ int main() {
         // Tüm küçük harfleri tarıyoruz (2. Harf)
         for (char h2 = 'a'; h2 <= 'z'; h2++) {
             
-            char h3 = h1; // KURAL 1: Üçüncü harf birinciyle aynı olmalı
+            char h3 = h1; //Üçüncü harf birinciyle aynı olmalı
 
             /* 
             KURAL: Yapı 'Ünlü-Ünsüz-Ünlü' veya 'Ünsüz-Ünlü-Ünsüz' olmalı.
@@ -64,4 +64,5 @@ if (asalmi(toplam)) {
             }
             
     şeklinde değiştirirsek eğer bize isimlerin yanında ASCII toplamlarını verecektir
+
     */
